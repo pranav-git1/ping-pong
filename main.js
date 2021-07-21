@@ -9,9 +9,12 @@ function setup() {
 
 function draw() {
     background(220);
+    fill("#ffffff")
     rect(5, posY - 40, 20, 100);
     rect(375, mouseY, 20, 100);
+    fill("#FFA500");
     circle(posX, posY, 20);
+    noFill();
     if (posX == 20) {
         dx = -dx;
     }
@@ -20,7 +23,9 @@ function draw() {
     }
     if (posX >= width) {
         stroke("#FF0000");
-        text("GAME OVER", 150, 150)
+        text("GAME OVER", 150, 150);
+        posX = 450;
+        posY = 450;
     }
     if (posY >= height - 20 || posY == 20) {
         dy = -dy
